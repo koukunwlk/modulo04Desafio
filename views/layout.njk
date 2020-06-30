@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+        <link rel="stylesheet" href="/style.css">
+
+        {% block head %}
+            <title>ClassRoom</title>
+        {% endblock head %}
+        
+        <link rel="icon" type="icon" href="/favicon.png"/>
+
+    </head>
+
+    <body>
+        <header>
+            <div class="links">
+                <a href="/" >Teachers</a>
+                <a href="/members">Students</a>
+            </div>
+        </header>
+        {% block content %}
+        {% endblock content %}
+        {% block scritps %}
+            <script src="/script.js"></script>
+        {% endblock scritps %}
+    </body>
+</html>
