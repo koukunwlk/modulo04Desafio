@@ -1,0 +1,43 @@
+{% extends 'layout.njk' %}
+
+{% block header %}
+                <a href="/teachers/create">Sign Up</a>
+{% endblock header %}
+
+{% block content %}
+<div class="card">
+    <section class='image-container' style="background: url({{teacher.avatar_url}}) no-repeat center center / cover;"></section>
+    <section class='details'>
+        <h3>Details</h3>
+        <div class="item">
+            <div>Name</div>
+            <div>{{teacher.name}}</div>
+        </div>
+        <div class="item">
+            <div>Age</div>
+            <div>{{teacher.birth}}</div>
+        </div>
+        <div class="item">
+            <div>Education level</div>
+            <div>{{teacher.degree}}</div>
+        </div>
+        <div class="item">
+            <div>Classroom</div>
+            <div>{{teacher.classroom}}</div>
+        </div>
+        <div class="item">
+            <div>Knowedge</div>
+            <div>
+                {% for lesson in teacher.knowedge %}
+                    <span>{{lesson}}</span>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="item">
+            <div>Sign In</div>
+            <div>{{teacher.created_at}}</div>
+        </div>
+    </section>
+
+</div>
+{% endblock content %}

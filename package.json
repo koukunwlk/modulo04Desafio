@@ -5,6 +5,7 @@
   "main": "server.js",
   "dependencies": {
     "express": "^4.17.1",
+    "intl": "^1.2.5",
     "nodemon": "^2.0.4",
     "nunjucks": "^3.2.1"
   },

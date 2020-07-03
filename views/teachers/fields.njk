@@ -1,0 +1,44 @@
+            <div class="item">
+                <div>Avatar url</div>
+                <input type="url" name="avatar_url" placeholder="http://" value="{{teacher.avatar_url}}">
+            </div>
+            <div class="item">
+                <div>Name</div>
+                <input type="text" name="name" placeholder="Enter your name" value="{{teacher.name}}">
+            </div>
+            <div class="item">
+                <div>Birth date</div>
+                <input type="date" name="birth" value="{{teacher.birth}}">
+            </div>
+            <div class="item">
+                <div>Education level</div>
+                <select name="degree" id="">
+                    {% if teacher.degree != "" %}
+                         <option value="{{foundTeacher.degree}}">{{teacher.degree}}</option>
+                    {% endif %}
+                    <option value="hs">High School</option>
+                    <option value="bd">Bachelors Degree</option>
+                    <option value="md">Master's Degree</option>
+                    <option value="dd">Doctorete Degree</option>
+                </select>
+            </div>
+            <div class="item">
+                <div>Classroom</div>
+                <span><input type="radio" value="online" name="classroom"
+                {% if teacher.classroom == "online" %}
+                    checked
+                {% endif %}>ONLINE</span>
+                <span><input type="radio" value="presential" name="classroom"
+                {% if teacher.classroom == "presential" %}
+                    checked
+                {% endif %}>PRESENTIAL</span>
+            </div>
+            <div class="item">
+                <div>Knowedge</div>
+                <input type="text" name="knowedge" 
+                placeholder="Enter your area of expertise separated by commas"
+                value="{{teacher.knowedge}}">
+            </div>
+            <div class="btn">
+                <button type="submit">Save</button>
+            </div>
