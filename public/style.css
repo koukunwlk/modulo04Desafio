@@ -32,6 +32,14 @@ header{
     color: #777;
     position: relative;
 }
+.links a + a + a{
+    text-decoration: none;
+    color: #777;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+
+}
 .links a.active{
     font-weight: bold;
     color: var(--primary-color);
@@ -102,9 +110,10 @@ header{
     text-transform: uppercase;
     font-weight: bold;
     color: var(--primary-color);
+    margin-bottom: 5px;
 }
 
-.details .item div:nth-child(2) span{
+.details span{
     padding: 8px 16px;
     background-color: var(--amarelo);
     border-radius: 16px;
@@ -120,4 +129,46 @@ header{
     to{
         opacity: 1;
     }
+}
+
+/* === FORM === */
+
+input{
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    background: none;
+    outline: none;
+}
+
+input[type="radio"],
+input[type="date"]{
+    margin-right: 5px;
+    width: initial;
+}
+button{
+    margin-top: 5px;
+    padding: 8px 16px;
+    width: 20%;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    color: white;
+    background: var(--primary-color);
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: 300ms;
+}
+.btn{
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+button:hover{
+    width: 40%;
+    filter: brightness(80%);
+    border-radius: 24px;
+
 }

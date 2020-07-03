@@ -1,0 +1,14 @@
+{
+    "teachers": [
+        {
+            "id": 1,
+            "avatar_url": "https://scontent-for1-1.xx.fbcdn.net/v/t1.0-9/82368444_2761700037243794_7760986799857467392_n.jpg?_nc_cat=106&_nc_sid=85a577&_nc_oc=AQlIsUBRI50vtq4XKcVIE0q64ARgtUxZIRd5t3WjxPKhz3WH1AiVLwxsxozQ_xMURXI&_nc_ht=scontent-for1-1.xx&oh=e714e0e35c9542455a6ff5fd89bcdfc1&oe=5F22C712",
+            "name": "Moacir Amaro",
+            "birth": 874022400000,
+            "degree": "bd",
+            "classroom": "O",
+            "knowedge": "Programming, Math, Science",
+            "created_at": 1593654382775
+        }
+    ]
+}
