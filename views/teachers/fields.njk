@@ -13,9 +13,6 @@
             <div class="item">
                 <div>Education level</div>
                 <select name="degree" id="">
-                    {% if teacher.degree != "" %}
-                         <option value="{{foundTeacher.degree}}">{{teacher.degree}}</option>
-                    {% endif %}
                     <option value="hs">High School</option>
                     <option value="bd">Bachelors Degree</option>
                     <option value="md">Master's Degree</option>
@@ -39,6 +36,4 @@
                 placeholder="Enter your area of expertise separated by commas"
                 value="{{teacher.knowedge}}">
             </div>
-            <div class="btn">
-                <button type="submit">Save</button>
-            </div>
+            

@@ -47,7 +47,8 @@ exports.show = (req, res) => {
             degree: graduation(foundTeacher.degree),
             classroom: foundTeacher.classroom.toUpperCase()
         }
-    return res.render('teachers/show', {teacher})
+        return res.render('teachers/show', {teacher})
+    
 }
 
 exports.edit = (req, res) => {
@@ -60,5 +61,50 @@ exports.edit = (req, res) => {
             birth: date(foundTeacher.birth),
             degree: graduation(foundTeacher.degree)}
 
-    return res.render('teachers/edit', {teacher, foundTeacher})
+    return res.render('teachers/edit', {teacher})
+}
+
+
+exports.update = (req, res) => {
+    const {id} = req.body
+
+    let index = 0
+
+    const foundteacher = data.teachers.find((teacher, foundIndex)=>{
+        if(id == teacher.id){
+            index = foundIndex
+            return true
+        }
+        
+    })
+    if(!foundteacher) return res.send('teacher not found')
+
+    const teacher = {
+        ...foundteacher,
+        ...req.body,
+        birth: Date.parse(req.body.birth)
+    }
+
+    data.teachers[index] = teacher
+
+    fs.writeFile('data.json', JSON.stringify(data, null, 4), (err) => {
+        if(err) res.send('Error: ' + err)})
+       
+    return res.redirect(`/teachers/${id}`)
+    
+
+}
+
+exports.delete = (req, res)=>{
+    const {id} = req.body
+
+    const filteredTeachers = data.teachers.filter((teacher)=>{
+        return teacher.id != id
+    })
+
+    data.teachers = filteredTeachers
+
+    fs.writeFile('data.json', JSON.stringify(data, null, 4), (err) => {
+        if(err) res.send('Error: ' + err)})
+    return res.redirect("/teachers")
 }
