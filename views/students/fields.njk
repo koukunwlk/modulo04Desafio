@@ -1,0 +1,39 @@
+<div class="item">
+    <div>Avatar url</div>
+    <input type="url" name="avatar_url" placeholder="http://" value="{{student.avatar_url}}">
+</div>
+<div class="item">
+    <div>Name</div>
+    <input type="text" name="name" placeholder="Enter your name" value="{{student.name}}">
+</div>
+<div class="item">
+    <div>Email</div>
+    <input type="email" name="email" placeholder="exemple@exemple.com" value="{{student.email}}">
+</div>
+<div class="item">
+    <div>Birth date</div>
+    <input type="date" name="birth" value="{{student.birth}}">
+</div>
+<div class="item">
+    <div>Grade</div>
+    <select name="grade" id="">
+        <option value="5" {% if student.grade =="5"%} selected="selected" {%endif%}>5th grade middle school
+        </option>
+        <option value="6" {% if student.grade =="6"%} selected="selected" {%endif%}>6th grade middle school
+        </option>
+        <option value="7" {% if student.grade =="7"%} selected="selected" {%endif%}>7th grade middle school
+        </option>
+        <option value="8" {% if student.grade =="8"%} selected="selected" {%endif%}>8th grade middle school
+        </option>
+        <option value="9" {% if student.grade =="9"%} selected="selected" {%endif%}>1st grade High school
+        </option>
+        <option value="10" {% if student.grade =="10"%} selected="selected" {%endif%}>2nd grade Hight School
+        </option>
+        <option value="11" {% if student.grade =="11"%} selected="selected" {%endif%}>3rd grade Hight School
+        </option>
+    </select>
+</div>
+<div class="item">
+    <div>Academic load</div>
+    <input type="number" name="academicload" value="{{student.academicload}}">
+</div>

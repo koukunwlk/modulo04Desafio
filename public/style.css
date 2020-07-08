@@ -199,3 +199,88 @@ button:hover{
     filter: brightness(80%);
     border-radius: 24px;
 }
+
+
+/* === INDEX === */
+
+.table-container{
+    display: block;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+th{
+    text-align: center;
+}
+
+table{
+    border-spacing: 0;
+}
+
+.table-container thead tr th{
+    text-align: left;
+}
+th{
+    text-transform: uppercase;
+    color: #777;
+    font-size: 16px;
+}
+.table-container thead tr th:last-child{
+    text-align: center;
+}
+
+td, th{
+    padding: 16px;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+tbody tr:last-child td{
+    border-bottom: none;
+}
+tbody tr td:first-child{
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    align-items: center;
+}
+
+tbody tr td:first-child span{
+    width: 48px;
+    height: 48px;
+    background-position: center;
+    background-size: cover;
+    box-shadow: 3px 1px 6px -4 black ;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+tbody tr td:nth-child(2) span{
+    padding: 8px 16px;
+    background-color: var(--amarelo);
+    border-radius: 16px;
+    display: inline-block;
+    margin: 8px 0 4px 0;
+}
+tbody tr td:last-child{
+    padding: 0;
+    text-align: center;
+}
+tbody tr td:last-child a, .table-container a{
+    text-decoration: none;
+    padding: 8px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+}
+tbody tr td:last-child a:hover{
+    filter: brightness(80%);
+}
+.table-container .new{
+    display: block;
+    float: right;
+    margin-bottom: 16px;
+}
+
+.students{
+    width: 50vw;
+}

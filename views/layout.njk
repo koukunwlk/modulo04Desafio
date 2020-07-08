@@ -18,17 +18,12 @@
     <body>
         <header>
             <div class="links">
-               
-                <a href="/" >Teachers</a>
-                <a href="/members">Students</a>
-                {% block header %}
-                {% endblock header %}
+                <a href="/teachers">Teachers</a>
+                <a href="/students">Students</a>
             </div>
         </header>
         {% block content %}
         {% endblock content %}
-        {% block scritps %}
-            <script src="/script.js"></script>
-        {% endblock scritps %}
+       <script src="/scripts.js"></script>
     </body>
 </html>

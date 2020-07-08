@@ -1,35 +1,16 @@
-const modalOverlay = document.querySelector(".modal-overlay")
-const cards = document.querySelectorAll(".card")
-
-
-
-for(let card of cards){
-    card.addEventListener("click", function(){
-        const videoId = card.getAttribute('id')
-        modalOverlay.classList.add("active")
-        document.querySelector('iframe').src= `https://rocketseat.com.br/${videoId}`
-    })
+const currentPage = location.pathname
+const menuItems = document.querySelectorAll("header .links a")
+for (item of menuItems) {
+  if (currentPage.includes(item.getAttribute('href'))) {
+    item.classList.add('active')
+  }
 }
 
-const closeModal = document.querySelector('.close-modal').addEventListener('click', ()=>{
-    modalOverlay.classList.remove('active')
-    document.querySelector('iframe').src= ""
-    document.querySelector('.modal').classList.remove('maximize')
+const formDelete = document.querySelector('#form-delete')
 
-
+formDelete.addEventListener("submit", ()=>{
+  const confirmation = confirm('Do you want delete?')
+  if(!confirmation){
+    event.preventDefault()
+  }
 })
-
-/* maximizando a pagina */
-const maximize = document.querySelector('.maximize-modal')
-const modal = document.querySelector('.modal')
-
-maximize.addEventListener('click', ()=>{
-    const isMaximize = modal.classList.contains('maximize')
-    if(isMaximize == true){
-        document.querySelector('.modal').classList.remove('maximize')
-    } else{
-        document.querySelector('.modal').classList.add('maximize')
-    }
-})
-
-

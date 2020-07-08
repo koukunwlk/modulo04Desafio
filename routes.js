@@ -1,67 +1,28 @@
 const express = require('express')
 const routes = express.Router()
-const teachers = require('./teachers')
+const teachers = require('./controllers/teachers')
+const students = require('./controllers/students')
+
 
 routes.get('/', (req, res)=>{
     return res.redirect('/teachers')
 })
 
-routes.get('/teachers', (req, res)=>{
-    return res.render('./teachers/index')
-})
-
-routes.get('/teachers/create', (req, res)=>{
-    return res.render('./teachers/create')
-} )
-
-routes.post('/teachers', teachers.post)
-
+routes.get('/teachers', teachers.index)
+routes.get('/teachers/create', teachers.create)
+routes.get('/teachers/:id', teachers.show)
+routes.get('/teachers/:id/edit', teachers.edit)
 routes.put('/teachers', teachers.update)
-
+routes.post('/teachers', teachers.post)
 routes.delete('/teachers', teachers.delete)
 
-
-routes.get('/teachers/:id', teachers.show)
-
-routes.get('/teachers/:id/edit', teachers.edit)
-
-routes.get('/students', (req, res)=>{
-    return res.render('/members')
-})
+routes.get('/students', students.index)
+routes.get('/students/create', students.create)
+routes.get('/students/:id', students.show)
+routes.get('/students/:id/edit', students.edit)
+routes.put('/students', students.update)
+routes.post('/students', students.post)
+routes.delete('/students', students.delete)
 
 
 module.exports = routes
-
-
-
-
-
-
-/* server.get('/', (req, res)=>{
-    res.render('about')
-})
-
-server.get('/contents', (req, res)=>{
-    res.render('contents', {contents})
-})
-
-server.get('/courses/:id', (req, res)=>{
-    const id = req.params.id
-
-    const content = contents.find((content)=>{
-        if(content.id == id){
-            return true
-        }
-    })
-
-    if(!content){
-        return res.send("Content not found")
-    }
-    
-    return res.render('courses', {content})
-    
-})
-
-server.use((req, res)=>{
-    res.status(404).render('not-found')
-}) */

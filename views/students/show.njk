@@ -1,0 +1,39 @@
+{% extends 'layout.njk' %}
+
+{% block header %}
+    <a href="/students/create">Sign Up</a>
+{% endblock header %}
+
+{% block content %}
+    <div class="card">
+        <section class='image-container' style="background: url({{student.avatar_url}}) no-repeat center center / cover;"></section>
+        <section class='details'>
+            <h3>Student details</h3>
+            <div class="item">
+                <div>Name</div>
+                <div>{{student.name}}</div>
+            </div>
+            <div class="item">
+                <div>Email</div>
+                <div>{{student.email}}</div>
+            </div>
+            <div class="item">
+                <div>Birth day</div>
+                <div>{{student.birth}}</div>
+            </div>
+            <div class="item">
+                <div>Grade</div>
+                <div>{{student.grade}}</div>
+            </div>
+            <div class="item">
+                <div>Academic load</div>
+                <div>{{student.academicload}}hrs</div>
+            </div>
+
+            <div class="btn-edit">
+                <a id="btn-edit" href="/students/{{student.id}}/edit">Edit</a>
+            </div>
+        </section>
+
+    </div>
+{% endblock content %}

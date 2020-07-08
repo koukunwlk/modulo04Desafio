@@ -20,11 +20,13 @@
             <form id="form-delete" method="post" action="/teachers?_method=DELETE">
 
                 <input type="hidden" name="id" value="{{teacher.id}}">
-                
-                <div class="btn-delete"> <button type="submit">Delete</button> </div>
 
-                </form>
+                <div class="btn-delete">
+                    <button type="submit">Delete</button>
+                </div>
 
-            </section>
-        </div>
-    {% endblock content %}
+            </form>
+
+        </section>
+    </div>
+{% endblock content %}
