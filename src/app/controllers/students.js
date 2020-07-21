@@ -1,11 +1,39 @@
-const fs = require('fs')
-const data = require('../data.json')
-const intl = require('intl')
-const {date, grade } = require('../utils')
+const {date, grade } = require('../lib/utils')
 
-Intl.DateTimeFormat = intl.DateTimeFormat
+module.exports = {
+    index(req, res){
+        return res.render('students/index')
+    },
 
-exports.index = (req, res) => {
+    create(req, res){
+        return res.render('students/create')
+    },
+
+    post(req, res){
+        return
+    },
+
+    show(req, res){
+        return
+    },
+
+    edit(req, res){
+        return
+    },
+
+    update(req, res){
+        return
+    },
+
+    delete(req, res){
+        return
+    }
+}
+
+
+
+
+/* exports.index = (req, res) => {
     let foundstudent = data.students.map((student)=>{
         return {
             ...student,
@@ -110,4 +138,4 @@ exports.delete = (req, res) => {
         if (err) res.send('Error: ' + err)
     })
     return res.redirect("/students")
-}
+} */

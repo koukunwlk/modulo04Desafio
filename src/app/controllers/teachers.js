@@ -1,9 +1,40 @@
-const fs = require('fs')
-const data = require('../data.json')
-const intl = require('intl')
-const { age, graduation, date } = require('../utils')
 
-Intl.DateTimeFormat = intl.DateTimeFormat
+const { age, graduation, date } = require('../lib/utils')
+
+module.exports = {
+    index(req, res){
+        return res.render('teachers/index')
+    },
+
+    create(req, res){
+        return res.render('teachers/create')
+    },
+
+    post(req, res){
+        return
+    },
+
+    show(req, res){
+        return
+    },
+
+    edit(req, res){
+        return
+    },
+
+    update(req, res){
+        return
+    },
+
+    delete(req, res){
+        return
+    }
+}
+
+
+
+
+/* Intl.DateTimeFormat = intl.DateTimeFormat
 
 exports.index = (req, res) => {
     let foundTeacher = data.teachers.map((teacher)=>{
@@ -121,4 +152,4 @@ exports.delete = (req, res) => {
         if (err) res.send('Error: ' + err)
     })
     return res.redirect("/teachers")
-}
+} */
