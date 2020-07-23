@@ -20,9 +20,7 @@
                             <br>
                         </td>
                         <td>
-                            {% for knowledge in teacher.knowledge %}
-                                <span>{{knowledge}}</span>
-                            {% endfor %}
+                            {{teacher.knowledge}}
                         </td>
                         <td>
                             <a href="/teachers/{{teacher.id}}">View</a>
