@@ -4,9 +4,15 @@ const teacher = require("../models/teacher")
 
 module.exports = {
     index(req, res) {
+        const {filter} = req.query
+        if(filter){
+            teacher.findBy(filter, function(teachers){
+            return res.render('teachers/index', { teachers, filter })
+            })
+        }else{
         teacher.all((teachers) => {
             return res.render('teachers/index', { teachers })
-        })
+        })}
     },
 
     create(req, res) {

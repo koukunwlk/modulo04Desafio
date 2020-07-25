@@ -2,12 +2,23 @@
 
 {% block content %}
     <div class="card table-container">
+        <div class="header">
+            <form action="/teachers" method="get">
+                <input type="text"
+                       name="filter"
+                       value= "{{filter}}"
+                       placeholder="Name or Knowledge">
+                    <button type="submit">Filter</button>
+            </form>
         <a class="new" href="/teachers/create">New teacher</a>
+
+        </div>
         <table width="100%">
             <thead>
                 <tr>
                     <th>Full name</th>
                     <th>Knowledges</th>
+                    <th>Students</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -21,6 +32,9 @@
                         </td>
                         <td>
                             {{teacher.knowledge}}
+                        </td>
+                        <td>
+                            {{teacher.total_students}}
                         </td>
                         <td>
                             <a href="/teachers/{{teacher.id}}">View</a>

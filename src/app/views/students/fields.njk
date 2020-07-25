@@ -32,6 +32,16 @@
         <option value="11" {% if student.grade =="11"%} selected="selected" {%endif%}>3rd grade Hight School
         </option>
     </select>
+    <div class="item">
+    <div>Student of</div>
+
+    <select name="teacher" >
+        {% for teacher in teacherOptions %}
+        <option value="{{teacher.id}}" {% if student.teacher_id == teacher.id %} selected {%endif%}>{{teacher.name}}
+        </option>
+        {% endfor %}
+    </select>
+    </div>
 </div>
 <div class="item">
     <div>Academic load</div>

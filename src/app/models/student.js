@@ -18,8 +18,9 @@ module.exports = {
             email,
             birth,
             grade,
-            academicload
-        )VALUES($1, $2, $3, $4, $5, $6)
+            academicload,
+            teacher_id
+        )VALUES($1, $2, $3, $4, $5, $6, $7)
         RETURNING id
         `
         const values = [
@@ -28,7 +29,8 @@ module.exports = {
             data.email,
             date(data.birth).iso,
             data.grade,
-            data.academicload
+            data.academicload,
+            data.teacher
         ]
         db.query(query, values, (err, results) => {
             if (err) throw `Database error ${err}`
@@ -51,7 +53,8 @@ module.exports = {
         birth = ($4),
         grade = ($5),
         academicload = ($6)
-        WHERE id =  $7
+        teacher_id =($7)
+        WHERE id =  $8
         `
         const values = [
             data.avatar_url,
@@ -60,6 +63,7 @@ module.exports = {
             date(data.birth).iso,
             data.grade,
             data.academicload,
+            data.teacher_id,
             data.id
         ]
 
@@ -73,6 +77,12 @@ module.exports = {
         db.query(`DELETE FROM students WHERE id = $1`, [id], (err, results) => {
             if (err) throw `Database error: ${err}`
             return callback()
+        })
+    },
+    teacherOptions(callback){
+        db.query(`SELECT name, id FROM teachers`,function(err, results){
+            if(err) throw `Database erro ${err}`
+            return callback(results.rows)
         })
     }
 

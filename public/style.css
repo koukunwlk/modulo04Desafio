@@ -275,12 +275,40 @@ tbody tr td:last-child a, .table-container a{
 tbody tr td:last-child a:hover{
     filter: brightness(80%);
 }
-.table-container .new{
-    display: block;
-    float: right;
-    margin-bottom: 16px;
-}
 
 .students{
     width: 50vw;
 }
+
+/* ==== TEACHER FILTER ==== */
+
+.table-container .header{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.table-container .header form{
+    display: grid;
+    grid-template-columns: 1fr 120px;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.table-container .header form input,
+    .table-container .header form button{
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+}
+.table-container .header form input{
+    border: 1px solid #eee;
+}
+.new{
+    width: 30%;
+    margin-left: auto;
+}
+
+
+
